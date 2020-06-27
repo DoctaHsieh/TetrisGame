@@ -31,7 +31,7 @@ public class Shape {
         this.board = board;
         this.color = color;
         deltaX = 0;
-        x = 4;
+        x = 7;
         y = 0;
         delay = normal;
         time = 0;
@@ -62,7 +62,7 @@ public class Shape {
             board.setCurrentShape();
         }
 
-        if(!(x + deltaX + coords[0].length > 10) && !(x + deltaX < 0))
+        if(!(x + deltaX + coords[0].length > 15) && !(x + deltaX < 0))
         {
 
             for(int row = 0; row < coords.length; row++)
@@ -85,7 +85,7 @@ public class Shape {
 
         }
 
-        if(!(y + 1 + coords.length > 20))
+        if(!(y + 1 + coords.length > 30))
         {
 
             for(int row = 0; row < coords.length; row++)
@@ -133,7 +133,7 @@ public class Shape {
             {
                 if(reference[row][col] != 0)
                 {
-                    g.drawImage(block, col*30 + 320, row*30 + 160, null);
+                    g.drawImage(block, col*30 + 500, row*30 + 160, null);
                 }
 
             }
@@ -169,7 +169,7 @@ public class Shape {
 
         rotatedShape = reverseRows(rotatedShape);
 
-        if((x + rotatedShape[0].length > 10) || (y + rotatedShape.length > 20))
+        if((x + rotatedShape[0].length > 15) || (y + rotatedShape.length > 30))
         {
             return;
         }

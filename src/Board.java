@@ -14,8 +14,6 @@ import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -25,26 +23,22 @@ import javax.swing.Timer;
 
 public class Board extends JPanel implements KeyListener, MouseListener, MouseMotionListener{
 
-    //Assets
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
 
-    private Clip music;
+
 
     private BufferedImage blocks, background, pause, refresh;
 
-    //board dimensions (the playing area)
 
-    private final int boardHeight = 20, boardWidth = 10;
 
-    // block size
+    private final int boardHeight = 30, boardWidth = 15;
+
+
 
     private final int blockSize = 30;
 
-    // field
+
 
     private int[][] board = new int[boardHeight][boardWidth];
 
@@ -94,7 +88,7 @@ public class Board extends JPanel implements KeyListener, MouseListener, MouseMo
         // load Assets
         blocks = ImageLoader.loadImage("/tiles.png");
 
-        background = ImageLoader.loadImage("/background.png");
+        background = ImageLoader.loadImage("/iPhone-Galaxy-Backgrounds.jpg");
         pause = ImageLoader.loadImage("/pause.png");
         refresh = ImageLoader.loadImage("/refresh.png");
 
@@ -103,8 +97,8 @@ public class Board extends JPanel implements KeyListener, MouseListener, MouseMo
         mouseX = 0;
         mouseY = 0;
 
-        stopBounds = new Rectangle(350, 500, pause.getWidth(), pause.getHeight() + pause.getHeight()/2);
-        refreshBounds = new Rectangle(350, 500 - refresh.getHeight() - 20,refresh.getWidth(),
+        stopBounds = new Rectangle(550, 350, pause.getWidth(), pause.getHeight() + pause.getHeight()/2);
+        refreshBounds = new Rectangle(550, 350 - refresh.getHeight() - 20,refresh.getWidth(),
                 refresh.getHeight() + refresh.getHeight()/2);
 
         // create game looper
@@ -194,7 +188,7 @@ public class Board extends JPanel implements KeyListener, MouseListener, MouseMo
             {
                 if(nextShape.getCoords()[row][col] != 0)
                 {
-                    g.drawImage(nextShape.getBlock(), col*30 + 320, row*30 + 50, null);
+                    g.drawImage(nextShape.getBlock(), col*30 + 500, row*30 + 50, null);
                 }
             }
         }

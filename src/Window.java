@@ -2,7 +2,7 @@ import javax.swing.JFrame;
 
 public class Window{
     //413
-    public static final int WIDTH = 445, HEIGHT = 629;
+    public static final int WIDTH = 667, HEIGHT = 943;
 
     private Board board;
     private Title title;
